@@ -1,7 +1,7 @@
 import { useState } from "react";
 import API from "../services/api";
 
-function Upload() {
+function Upload({ setDocumentId }) {
 
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState("");
@@ -32,6 +32,7 @@ function Upload() {
                 "Uploaded Successfully. Document ID: "
                 + response.data.id
             );
+              setDocumentId(response.data.id);
 
         } catch(error) {
 
