@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Upload from "./components/Upload";
-
+import ChatBox from "./components/ChatBox";
+import DocumentList from "./components/DocumentList";
 function App() {
 
   const [documentId, setDocumentId] = useState(null);
@@ -11,13 +12,13 @@ function App() {
       <h1>AI Document Q&A System</h1>
 
       <Upload setDocumentId={setDocumentId} />
+        
+        <DocumentList />
 
       {
-        documentId &&
-        <p>
-          Ready for questions. Document ID: {documentId}
-        </p>
-      }
+  documentId &&
+  <ChatBox documentId={documentId} />
+}
 
     </div>
   );

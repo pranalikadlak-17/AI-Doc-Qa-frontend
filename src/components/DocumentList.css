@@ -1,0 +1,29 @@
+.document-container {
+    width: 70%;
+    margin: 30px auto;
+}
+
+.document-card {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.document-card p {
+    margin: 5px;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+}

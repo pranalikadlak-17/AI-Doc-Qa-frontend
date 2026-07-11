@@ -1,0 +1,51 @@
+.chat-container {
+    width: 70%;
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+.chat-container h2 {
+    text-align: center;
+}
+
+.question-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.question-input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.ask-btn {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ask-btn:hover {
+    background: #357abd;
+}
+
+.answer-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f5f7fb;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.answer-box h3 {
+    margin-top: 0;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import API from "../services/api";
-
+import "./Upload.css";
 function Upload({ setDocumentId }) {
 
     const [file, setFile] = useState(null);
@@ -37,26 +37,29 @@ function Upload({ setDocumentId }) {
         } catch(error) {
 
             console.log(error);
-            setMessage("Upload failed");
+            setMessage("Upload failed:" + error.message );
 
         }
     };
 
 
     return (
-        <div>
+        <div className="upload-container">
 
             <h2>Upload Document</h2>
 
             <input
-                type="file"
-                accept=".pdf"
-                onChange={(e)=>setFile(e.target.files[0])}
-            />
+    className="file-input"
+    type="file"
+    accept=".pdf"
+    onChange={(e)=>setFile(e.target.files[0])}
+/>
 
-            <button onClick={handleUpload}>
-                Upload
-            </button>
+            <button 
+            className="upload-btn"
+            onClick={handleUpload}>
+    Upload
+</button>
 
             <p>{message}</p>
 
