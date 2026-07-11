@@ -32,9 +32,12 @@ function ChatBox({ documentId }) {
             console.log(error);
             setAnswer("Failed to get answer");
 
-        }
+        }finally {
 
         setLoading(false);
+        }
+
+    
     };
 
 
@@ -63,17 +66,26 @@ function ChatBox({ documentId }) {
 
 
         {
-            answer &&
-            <div className="answer-box">
+          loading &&
+    <div className="answer-box">
+        <h3>AI Answer:</h3>
+        <p>🤖 AI is thinking...</p>
+    </div>
+}
 
-                <h3>AI Answer</h3>
 
-                <ReactMarkdown>
-                    {answer}
-                </ReactMarkdown>
+{
+    answer && !loading &&
+    <div className="answer-box">
 
-            </div>
-        }
+        <h3>AI Answer:</h3>
+
+        <ReactMarkdown>
+            {answer}
+        </ReactMarkdown>
+
+    </div>
+}
 
     </div>
 );
