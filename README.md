@@ -25,7 +25,7 @@ npm run dev
 ## Screenshots
 
 ### Home Page
-![Home page](screenshots/Home page.png)
+![Home page](screenshots/Homepage.png)
 
 ### AI Answer
 ![Q&A in action](screenshots/QA.png)
