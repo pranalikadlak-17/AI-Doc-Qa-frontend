@@ -1,16 +1,41 @@
-# React + Vite
+# AI Document Q&A — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React frontend for the [AI Document Q&A System](https://github.com/pranalikadlak-17/ai-doc-qa) — a full-stack app that lets users upload a PDF and ask natural-language questions about it, powered by the Google Gemini API.
 
-Currently, two official plugins are available:
+> This repo is the UI only. It needs the [Spring Boot backend](https://github.com/pranalikadlak-17/ai-doc-qa) running to work — see that repo for backend setup instructions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React (Vite)
+- Axios for API calls
+- React Markdown for rendering AI answers
+- Plain CSS with a custom design system (no UI framework)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+1. Clone this repo.
+2. Install dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npm install
+3. Make sure the backend is running on `http://localhost:8080` (see backend repo for setup).
+4. Start the dev server:
+npm run dev
+5. Open `http://localhost:5173` in your browser.
+
+## Screenshots
+
+### Home Page
+![Home page](screenshots/Home page.png)
+
+### AI Answer
+![Q&A in action](screenshots/QA.png)
+
+## Related
+
+- [Backend repository](https://github.com/pranalikadlak-17/ai-doc-qa) — Spring Boot API, PDF text extraction, Gemini integration
+
+## Author
+
+**Pranali Kadlak**
+[GitHub](https://github.com/pranalikadlak-17) | [LinkedIn](https://www.linkedin.com/in/pranali-kadlak-5ab5433a9)
+
