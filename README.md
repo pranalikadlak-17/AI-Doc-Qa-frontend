@@ -1,8 +1,8 @@
 # AI Document Q&A — Frontend
 
-This is the React frontend for the [AI Document Q&A System](https://github.com/pranalikadlak-17/ai-doc-qa) — a full-stack app that lets users upload a PDF and ask natural-language questions about it, powered by the Google Gemini API.
+This is the React frontend for the [AI Document Q&A System](https://github.com/pranalikadlak-17/ai-document-multimedia-qa-system)
 
-> This repo is the UI only. It needs the [Spring Boot backend](https://github.com/pranalikadlak-17/ai-doc-qa) running to work — see that repo for backend setup instructions.
+>  This repo is the UI only. It needs the [Spring Boot backend](https://github.com/pranalikadlak-17/ai-document-multimedia-qa-system) running to work — see that repo for backend setup instructions.
 
 ## Tech Stack
 
@@ -32,8 +32,7 @@ npm run dev
 
 ## Related
 
-- [Backend repository](https://github.com/pranalikadlak-17/ai-doc-qa) — Spring Boot API, PDF text extraction, Gemini integration
-
+- [Backend repository](https://github.com/pranalikadlak-17/ai-document-multimedia-qa-system) — Spring Boot API, PDF text extraction, Gemini integration
 ## Author
 
 **Pranali Kadlak**
