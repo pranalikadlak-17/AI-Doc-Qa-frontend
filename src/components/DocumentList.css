@@ -1,29 +1,9 @@
-.document-container {
-    width: 70%;
-    margin: 30px auto;
-}
-
-.document-card {
-    background: #f8f9fa;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-
-.document-card p {
-    margin: 5px;
-}
-
-.delete-btn {
-    background: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.delete-btn:hover {
-    background: #cc0000;
-}
+.document-panel { background: var(--paper-raised); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+.document-panel h2 { font-size: 18px; margin-bottom: 14px; }
+.document-empty { color: var(--ink-soft); font-size: 14px; padding: 8px 0; }
+.document-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 4px; border-bottom: 1px solid var(--border); }
+.document-row:last-child { border-bottom: none; }
+.document-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+.document-type { font-family: var(--mono); font-size: 11px; text-transform: uppercase; color: var(--ink-soft); }
+.delete-btn { background: transparent; color: var(--danger); border: 1px solid var(--danger-soft); padding: 6px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+.delete-btn:hover { background: var(--danger-soft); }

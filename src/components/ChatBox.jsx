@@ -4,92 +4,47 @@ import ReactMarkdown from "react-markdown";
 import "./ChatBox.css";
 
 function ChatBox({ documentId }) {
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-    const [question, setQuestion] = useState("");
-    const [answer, setAnswer] = useState("");
-    const [loading, setLoading] = useState(false);
+  const askQuestion = async () => {
+    if (!question) return;
+    setLoading(true);
+    setError("");
+    setAnswer("");
+    try {
+      const response = await API.post("/ask", { documentId, question });
+      setAnswer(response.data.answer);
+    } catch (error) {
+      console.log(error);
+      setError("Couldn't get an answer. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  const handleKeyDown = (e) => { if (e.key === "Enter") askQuestion(); };
 
-    const askQuestion = async () => {
-
-        if (!question) {
-            return;
-        }
-
-        setLoading(true);
-
-        try {
-
-            const response = await API.post("/ask", {
-                documentId: documentId,
-                question: question
-            });
-
-            setAnswer(response.data.answer);
-
-        } catch (error) {
-
-            console.log(error);
-            setAnswer("Failed to get answer");
-
-        }finally {
-
-        setLoading(false);
-        }
-
-    
-    };
-
-
-    return (
-    <div className="chat-container">
-
-        <h2>Ask Questions</h2>
-
-        <div className="question-box">
-
-           <input
-             className="question-input"
-             type="text"
-             placeholder="Ask something about your document"
-             value={question}
-             onChange={(e)=>setQuestion(e.target.value)}
-/>
-
-            <button 
-              className="ask-btn"
-              onClick={askQuestion}>
-              Ask
-            </button>
-
+  return (
+    <section className="chat-panel">
+      <h2>Ask a question</h2>
+      <div className="question-box">
+        <input className="question-input" type="text" placeholder="Ask something about your document"
+          value={question} onChange={(e) => setQuestion(e.target.value)} onKeyDown={handleKeyDown} />
+        <button className="ask-btn" onClick={askQuestion} disabled={loading}>Ask</button>
+      </div>
+      {loading && <div className="answer-box loading"><p>Reading the document…</p></div>}
+      {error && !loading && <div className="answer-box error"><p>{error}</p></div>}
+      {answer && !loading && !error && (
+        <div className="answer-box">
+          <span className="answer-label">Answer</span>
+          <ReactMarkdown>{answer}</ReactMarkdown>
         </div>
-
-
-        {
-          loading &&
-    <div className="answer-box">
-        <h3>AI Answer:</h3>
-        <p>🤖 AI is thinking...</p>
-    </div>
-}
-
-
-{
-    answer && !loading &&
-    <div className="answer-box">
-
-        <h3>AI Answer:</h3>
-
-        <ReactMarkdown>
-            {answer}
-        </ReactMarkdown>
-
-    </div>
-}
-
-    </div>
-);
-
+      )}
+    </section>
+  );
 }
 
 export default ChatBox;

@@ -1,51 +1,80 @@
-.chat-container {
-    width: 70%;
-    margin: 40px auto;
-    padding: 25px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background: white;
+.chat-panel 
+{ background: var(--paper-raised);
+     border: 1px solid var(--border);
+      border-radius: 14px;
+       padding: 28px;
+     }
+.chat-panel h2 
+{ font-size: 18px; 
+    margin-bottom: 16px;
+ }
+
+.question-box 
+{ display: flex;
+     gap: 10px;
+     }
+
+.question-input 
+{ flex: 1; min-width: 0;
+     padding: 10px 14px; 
+     border-radius: 8px; 
+     border: 1px solid var(--border); 
+     font-size: 14px; font-family: var(--sans);
+      background: var(--paper);
+       color: var(--ink); 
+    
 }
 
-.chat-container h2 {
-    text-align: center;
+.question-input:focus 
+{ outline: none; 
+    border-color: var(--teal);
 }
 
-.question-box {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+.ask-btn 
+{ background: var(--teal);
+     color: #fff; border: none;
+      padding: 10px 20px; 
+      border-radius: 8px;
+       font-size: 14px;
+        font-weight: 600;
+         cursor: pointer; 
+         transition: background 0.2s;
+          flex-shrink: 0; 
+}
+.ask-btn:hover:not(:disabled)
+{ 
+    background: #1f5551; 
 }
 
-.question-input {
-    width: 60%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.ask-btn {
-    background: #4a90e2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.ask-btn:hover {
-    background: #357abd;
-}
-
-.answer-box {
-    margin-top: 25px;
-    padding: 20px;
-    background: #f5f7fb;
-    border-radius: 10px;
-    text-align: left;
-}
-
-.answer-box h3 {
-    margin-top: 0;
-}
+.ask-btn:disabled
+ { opacity: 0.6; 
+    cursor: not-allowed; 
+ }
+.answer-box 
+{ margin-top: 20px; 
+    padding: 18px;
+     border-left: 3px solid var(--accent); 
+     background: var(--accent-soft); border-radius: 0 8px 8px 0; 
+     font-family: var(--serif); font-size: 15px;
+      line-height: 1.6;
+     }
+.answer-box.loading 
+{ color: var(--ink-soft);
+     font-family: var(--sans);
+      font-style: italic; 
+    }
+.answer-box.error
+ { 
+    border-left-color: var(--danger);
+     background: var(--danger-soft);
+      color: var(--danger); 
+      font-family: var(--sans);
+     }
+.answer-label
+ { 
+    display: block;
+     font-family: var(--mono); 
+     font-size: 11px; text-transform: uppercase; 
+     letter-spacing: 0.06em; color: var(--accent); margin-bottom: 8px;
+    
+    }

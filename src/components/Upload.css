@@ -1,40 +1,13 @@
-.upload-container {
-    width: 50%;
-    margin: 30px auto;
-    padding: 25px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background: #ffffff;
-    text-align: center;
-}
-
-.upload-container h2 {
-     margin: 15px;
-}
-
-.file-input {
-     margin: 15px 10px;
-}
-
-.upload-btn {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.upload-btn:hover {
-    background: #388e3c;
-}
-
-.success-message {
-    color: green;
-    margin-top: 15px;
-}
-
-.error-message {
-    color: red;
-    margin-top: 15px;
-}
+.upload-panel { background: var(--paper-raised); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+.upload-panel h2 { font-size: 18px; margin-bottom: 4px; }
+.upload-hint { color: var(--ink-soft); font-size: 13px; margin-bottom: 18px; }
+.file-drop { display: flex; align-items: center; border: 1.5px dashed var(--border); border-radius: 10px; padding: 16px; cursor: pointer; margin-bottom: 16px; transition: border-color 0.2s, background 0.2s; }
+.file-drop:hover { border-color: var(--accent); background: var(--accent-soft); }
+.file-input { display: none; }
+.file-drop-label { font-size: 14px; color: var(--ink-soft); }
+.upload-btn { background: var(--accent); color: #fff; border: none; padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.upload-btn:hover:not(:disabled) { background: #a3672f; }
+.upload-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.upload-message { margin-top: 14px; font-size: 13px; }
+.upload-message.success { color: var(--teal); }
+.upload-message.error { color: var(--danger); }
